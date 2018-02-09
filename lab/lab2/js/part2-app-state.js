@@ -33,7 +33,7 @@
 ===================== */
 
 // Use the data source URL from lab 1 in this 'ajax' function:
-var downloadData = $.ajax("http://");
+var downloadData = $.ajax("https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-crime-snippet.json");
 
 // Write a function to prepare your data (clean it up, organize it as you like, create fields, etc)
 var parseData = function() {};

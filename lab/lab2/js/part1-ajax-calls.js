@@ -2,9 +2,8 @@
  * Using ajax, download some data from a remote server and log it to the console
  */
 
-var data = $.Ajax("https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-crime-snippet.json");
-console.log("data");
-
+var data = $.ajax("https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-crime-snippet.json");
+data.then(function(dat){console.log(JSON.parse(dat));});
 
 var map = L.map('map', {
   center: [39.9522, -75.1639],
