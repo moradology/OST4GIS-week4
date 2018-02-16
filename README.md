@@ -32,4 +32,3 @@
   - HTML Basics 2
   - CSS: An Overview
 - Complete [Week 4 Assignment 1](assignment/assignment1)
-
