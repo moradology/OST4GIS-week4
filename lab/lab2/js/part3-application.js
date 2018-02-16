@@ -26,10 +26,8 @@
 /* =====================
   Define a resetMap function to remove markers from the map and clear the array of markers
 ===================== */
-var resetMap = function() {
-  /* =====================
-    Fill out this function definition
-  ===================== */
+var resetMap = function(markers) {
+  
 };
 
 /* =====================
