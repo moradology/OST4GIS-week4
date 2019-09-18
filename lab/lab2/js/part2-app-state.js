@@ -33,16 +33,24 @@
 ===================== */
 
 // Use the data source URL from lab 1 in this 'ajax' function:
-var downloadData = $.ajax("http://");
+var downloadData = $.ajax("https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-crime-snippet.json");
 
 // Write a function to prepare your data (clean it up, organize it as you like, create fields, etc)
-var parseData = function() {};
+var parseData = function(dat) {
+  var parsed = JSON.parse(dat);
+  return parsed;
+};
 
+//underscore each
 // Write a function to use your parsed data to create a bunch of marker objects (don't plot them!)
-var makeMarkers = function() {};
+var makeMarkers = function(dat) {
+  return _.map(dat, function(item){return L.marker([item.Lat, item.Lng]).bindPopup(item["General Crime Category"]);});
+};
 
 // Now we need a function that takes this collection of markers and puts them on the map
-var plotMarkers = function() {};
+var plotMarkers = function(dat) {
+  return _.map(dat, function(item){return item.addTo(map);});
+};
 
 // At this point you should see a bunch of markers on your map.
 // Don't continue on until you can make them appear!
@@ -61,8 +69,10 @@ var plotMarkers = function() {};
 ===================== */
 
 // Look to the bottom of this file and try to reason about what this function should look like
-var removeMarkers = function() {};
-
+var removeMarkers = function(dat) {
+  return _.map(dat, function(item){return map.removeLayer(item);});
+};
+ 
 /* =====================
   Optional, stretch goal
   Write the necessary code (however you can) to plot a filtered down version of
